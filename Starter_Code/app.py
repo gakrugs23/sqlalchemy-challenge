@@ -1,13 +1,8 @@
 # Import the dependencies.
 
 import numpy as np
-import pandas as pd
-import datetime as dt
-import re
-
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.inspection import inspect
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify
@@ -31,13 +26,12 @@ Base.prepare(autoload_with=engine)
 Station = Base.classes.station
 Measurement = Base.classes.measurement
 
-# Create our session (link) from Python to the DB
 
 
 #################################################
 # Flask Setup
 #################################################
-
+app = Flask(__name__)
 
 
 
